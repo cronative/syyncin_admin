@@ -1,0 +1,112 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+:root {
+  --blue: #0668e8;
+  --teal: #00cfae;
+  --navy: #062d69;
+  --ink: #0a1741;
+  --sub: #6577ab;
+  --line: #e1e7f2;
+  --bg: #f4f6fb;
+  --badge: #edf4ff;
+  --gradient: linear-gradient(90deg, #0668e8 0%, #00cfae 100%);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+/* Brand gradient on primary actions (matches app CTAs) */
+.ant-btn-primary:not(:disabled):not(.ant-btn-dangerous):not(.ant-btn-background-ghost) {
+  background: var(--gradient);
+  border: none;
+}
+.ant-btn-primary:not(:disabled):not(.ant-btn-dangerous):not(.ant-btn-background-ghost):hover { filter: brightness(1.06); }
+.ant-switch.ant-switch-checked { background: var(--gradient); }
+.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) { background: var(--gradient); filter: brightness(1.06); }
+
+/* Sidebar */
+.app-sider { background: linear-gradient(180deg, #062d69 0%, #0a1741 100%) !important; }
+.app-sider .ant-layout-sider-children { display: flex; flex-direction: column; }
+.app-sider .ant-menu { padding: 0 12px; }
+.app-sider .ant-menu-item-selected { box-shadow: inset 3px 0 0 #00cfae; }
+.sider-footer { margin-top: auto; padding: 16px 20px 20px; color: rgba(255,255,255,0.5); font-size: 12px; }
+
+/* Header */
+.app-header { display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.page-title { font-size: 20px; font-weight: 700; margin: 0; color: var(--ink); line-height: 1.2; }
+.page-sub { color: var(--sub); font-size: 13px; margin-top: 2px; }
+
+.page { padding: 24px 28px 40px; max-width: 1400px; }
+.panel { background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.panel-pad { padding: 20px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.toolbar .spacer { flex: 1; }
+
+/* KPI cards */
+.kpi { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; height: 100%; position: relative; overflow: hidden; }
+.kpi .label { color: var(--sub); font-size: 13px; font-weight: 500; }
+.kpi .value { font-size: 28px; font-weight: 700; margin-top: 6px; letter-spacing: -0.5px; }
+.kpi .icon { position: absolute; right: 16px; top: 16px; width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; }
+.kpi .hint { font-size: 12px; color: var(--sub); margin-top: 4px; }
+.kpi.accent { background: var(--gradient); border: none; color: #fff; }
+.kpi.accent .label, .kpi.accent .hint { color: rgba(255,255,255,0.85); }
+
+/* Bars */
+.bar-track { height: 8px; background: #e9edf6; border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--gradient); border-radius: 4px; transition: width 0.4s ease; }
+.vbar-chart { display: flex; align-items: flex-end; gap: 8px; height: 180px; padding-top: 12px; }
+.vbar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+.vbar .col { width: 100%; max-width: 28px; background: var(--gradient); border-radius: 6px 6px 3px 3px; min-height: 3px; }
+.vbar .col.zero { background: #e9edf6; }
+.vbar .d { font-size: 10px; color: var(--sub); }
+.vbar .n { font-size: 11px; font-weight: 600; color: var(--ink); }
+
+/* Icon tile like the app's reason cards */
+.icon-tile { width: 36px; height: 36px; border-radius: 8px; background: var(--badge); color: var(--blue); display: grid; place-items: center; flex: none; }
+
+/* Drag handle */
+.drag-handle { cursor: grab; color: var(--sub); }
+.drag-handle:active { cursor: grabbing; }
+
+/* Verification cards */
+.verif-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; height: 100%; }
+.verif-img { aspect-ratio: 4 / 5; background: #d8dfe8; display: grid; place-items: center; overflow: hidden; }
+.verif-img img { width: 100%; height: 100%; object-fit: cover; }
+.verif-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.verif-actions { display: flex; gap: 8px; padding: 0 16px 16px; }
+
+/* Login */
+.ant-app { min-height: 100%; }
+.login-wrap { min-height: 100vh; display: grid; grid-template-columns: 1.1fr 1fr; }
+.login-brand { background: linear-gradient(135deg, #062d69 0%, #054d9e 60%, #008f78 100%); color: #fff; padding: 56px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.login-brand .ring { position: absolute; border-radius: 50%; border: 1.5px dashed rgba(255,255,255,0.22); }
+.login-form { display: grid; place-items: center; padding: 40px; background: #fff; }
+.login-card { width: 100%; max-width: 380px; }
+.tagline { letter-spacing: 3px; font-size: 12px; color: rgba(255,255,255,0.75); }
+.tagline b { color: #00cfae; font-weight: 400; }
+@media (max-width: 900px) {
+  .login-wrap { grid-template-columns: 1fr; }
+  .login-brand { display: none; }
+}
+
+.muted { color: var(--sub); }
+.mono { font-variant-numeric: tabular-nums; }
+.section-title { font-size: 13px; font-weight: 600; color: var(--sub); text-transform: uppercase; letter-spacing: 0.6px; margin: 20px 0 10px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 8px; border: 1px solid var(--line); font-size: 12.5px; background: #fff; margin: 0 6px 6px 0; }
+.ant-table-wrapper .ant-table { border-radius: 0 0 12px 12px; }
+.ant-pagination { padding: 0 20px 4px; }
+
+.nowrap { white-space: nowrap; }
+
+/* Mobile / tablet navigation (sidebar becomes a drawer below 992px) */
+.app-nav-drawer .ant-drawer-content { background: linear-gradient(180deg, #062d69 0%, #0a1741 100%); }
+.app-nav-drawer .ant-menu { padding: 0 12px; }
+.app-nav-drawer .ant-menu-item-selected { box-shadow: inset 3px 0 0 #00cfae; }
+.nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin-left: -8px; border: 0; border-radius: 10px; background: transparent; color: var(--ink); font-size: 20px; cursor: pointer; }
+.nav-toggle:hover { background: #f1f4fa; }
+@media (max-width: 991px) { .app-header { padding-inline: 16px !important; gap: 10px; } }
+@media (max-width: 575px) { .page { padding: 16px 16px 32px; } }
